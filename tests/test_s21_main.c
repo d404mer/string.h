@@ -10,15 +10,22 @@ Suite *s21_memcmp_suite(void);
 int main(void) {
   int number_failed;
 
-  SRunner *sr = srunner_create(s21_memcmp_suite());
+  SRunner *sr_memcmp = srunner_create(s21_memcmp_suite());
+  SRunner *sr_memchr = srunner_create(s21_memchr_suite());
+  //   srunner_run_all(sr, CK_NORMAL);
 
-  srunner_add_suite(sr, s21_memchr_suite());
+  // Run each suite individually
+  srunner_run_suite(sr_memcmp, CK_NORMAL);
+  srunner_run_suite(sr_memchr, CK_NORMAL);
 
-  srunner_run_all(sr, CK_NORMAL);
+  // Check if any tests failed
+  number_failed =
+      srunner_ntests_failed(sr_memcmp) + srunner_ntests_failed(sr_memchr);
 
-  number_failed = srunner_ntests_failed(sr);
+  // Free resources
+  srunner_free(sr_memcmp);
+  srunner_free(sr_memchr);
 
-  srunner_free(sr);
-
+  // Return 0 if all tests passed, 1 if some tests failed
   return (number_failed == 0) ? 0 : 1;
 }
