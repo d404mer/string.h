@@ -35,7 +35,7 @@ $(LIB): $(OBJ)
 # build and run tests
 test: $(LIB) $(TEST_OBJ)
 	$(CC) $(CFLAGS) $(TEST_OBJ) -L. -l:s21_string.a -o $(TEST_EXEC) $(LDFLAGS) 
-	@rm -f $(OBJ) *.gcda *.gcno
+	@rm -f $(OBJ) *.gcda *.gcno $(TEST_DIR)/*.o
 
 # general gcov report in HTML format
 gcov_report: 

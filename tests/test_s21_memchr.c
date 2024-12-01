@@ -1,7 +1,7 @@
 #include <check.h>
 #include <string.h>
 
-#include "../string.h"
+#include "../s21_string.h"
 
 /**
  * test 1: test the s21_memchr function with a basic test where the character is
