@@ -13,13 +13,12 @@ int main(void) {
   Suite *sr_memchr;
   SRunner *sr;
 
-// TODO: fix output???
+  // TODO: fix output???
   sr = srunner_create(s21_memchr_suite());
   sr_memchr = s21_memchr_suite();
   srunner_add_suite(sr, sr_memchr);
 
   srunner_add_suite(sr, s21_memcmp_suite());
-
 
   srunner_run_all(sr, CK_NORMAL);
 
@@ -34,13 +33,8 @@ int main(void) {
   // srunner_run_suite(sr_memcmp, CK_NORMAL);
   // srunner_run_suite(sr_memchr, CK_NORMAL);
 
-
-
-
-
   // Check if any tests failed
-  number_failed =
-      srunner_ntests_failed(sr);
+  number_failed = srunner_ntests_failed(sr);
 
   // Free resources
   srunner_free(sr);
