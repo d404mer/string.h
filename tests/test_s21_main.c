@@ -10,7 +10,7 @@ extern Suite *s21_memcmp_suite(void);
 int main(void) {
   int number_failed;
 
-  Suite *sr_memchr, *sr_memcmp;
+  Suite *sr_memchr;
   SRunner *sr;
 
 
@@ -43,8 +43,7 @@ int main(void) {
       srunner_ntests_failed(sr);
 
   // Free resources
-  srunner_free(sr_memcmp);
-  srunner_free(sr_memchr);
+  srunner_free(sr);
 
   // Return 0 if all tests passed, 1 if some tests failed
   return (number_failed == 0) ? 0 : 1;
