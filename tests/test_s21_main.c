@@ -13,7 +13,7 @@ int main(void) {
   Suite *sr_memchr;
   SRunner *sr;
 
-
+// TODO: fix output???
   sr = srunner_create(s21_memchr_suite());
   sr_memchr = s21_memchr_suite();
   srunner_add_suite(sr, sr_memchr);
