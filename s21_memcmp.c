@@ -11,3 +11,11 @@ int s21_memcmp(const void *s1, const void *s2, size_t n) {
       ret = 1;
   return ret;
 }
+
+/*
+  potential logical error:
+  test_memcmp_bigger_n:0: Assertion 'result_s21 == result_og' failed:
+  result_s21
+  == 0, result_og == 138
+
+*/
