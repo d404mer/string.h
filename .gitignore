@@ -59,3 +59,5 @@ s21_string_test
 .gcno
 .gcov
 
+lib_obj/
+test_obj/
