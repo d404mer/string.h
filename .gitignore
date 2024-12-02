@@ -51,6 +51,11 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-
+# Lib and binary
 s21_string.a 
 s21_string_test
+
+# GCOV reporting
+.gcno
+.gcov
+
